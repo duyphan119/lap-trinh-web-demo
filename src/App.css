@@ -1,38 +1,196 @@
+* {
+  font-family: "Lucida Console";
+  box-sizing: border-box;
+}
+button {
+  cursor: pointer;
+}
+.fl-1 {
+  flex: 1;
+}
+.fl-2 {
+  flex: 2;
+}
+.fl-3 {
+  flex: 3;
+}
+.fl-4 {
+  flex: 4;
+}
+.fl-5 {
+  flex: 5;
+}
+.fl-6 {
+  flex: 6;
+}
+.fl-7 {
+  flex: 7;
+}
+.fl-8 {
+  flex: 8;
+}
+.fl-9 {
+  flex: 9;
+}
+.fl-10 {
+  flex: 10;
+}
 .App {
+  width: 1200px;
+  margin: 0 auto;
+}
+.App h1 {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.TaskListContainer {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  width: 100%;
+}
+.TaskForm {
+  flex: 2;
+  padding: 20px;
+  border: 2px solid black;
+  position: relative;
+}
+.TaskForm h1{
+  font-size: 24px;
+}
+.TaskFormBtnClose {
+  position: absolute;
+  right: 6px;
+  top: 6px;
+  background-color: red;
+  width: 24px;
+  height: 24px;
+  border: none;
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.TaskFormGroup {
+  width: 100%;
+  margin: 5px 0;
+}
+.TaskFormGroup input {
+  width: 100%;
+  padding: 5px 1px;
+}
+.TaskFormGroup select {
+  width: 100%;
+  padding: 5px 1px;
+}
+.TaskFormSubmit {
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
+}
+.TaskFormBtnSubmit {
+  height: 32px;
+  padding-inline: 20px;
+  background-color: rgb(156, 45, 253);
+  border: 1px solid rgb(156, 45, 253);
+  color: white;
+}
+.TaskListResult {
+  flex: 7;
+  margin-left: 20px;
+}
+.TaskListResultBtnAdd {
+  background-color: rgb(80, 77, 253);
+  border: 1px solid rgb(80, 77, 253);
+  color: white;
+  padding: 6px 18px;
+  margin-bottom: 4px;
+}
+.TaskBtnEdit,
+.TaskBtnRemove {
+  height: 30px;
+  min-width: 50px;
+  margin: 4px;
+}
+.TaskBtnEdit {
+  background-color: rgb(255, 212, 155);
+  border: 1px solid rgb(255, 212, 155);
+}
+.TaskBtnRemove {
+  background-color: rgb(253, 79, 56);
+  border: 1px solid rgb(253, 79, 56);
+}
+.TaskListMain {
+  border: 0.5px solid black;
+}
+.TaskListTitleList {
+  display: flex;
+}
+.TaskListTitle {
+  text-align: center;
+  border: 0.5px solid black;
+  cursor: pointer;
+  user-select: none;
+  padding: 3px 0;
+  font-weight: 600;
+}
+.TaskContainer {
+  display: flex;
+}
+.Task {
+  border: 0.5px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.TaskStatus span {
+  font-size: 11px;
+  background-color: rgb(11, 9, 9);
+  color: white;
+  cursor: pointer;
+  padding: 3px 7px;
+  border-radius: 5px;
+}
+.TaskStatus .TaskStatusCompleted {
+  background-color: rgb(76, 224, 22);
+  color: black;
+}
+.MessageContainer {
+  position: fixed;
+  right: 10px;
+  top: 10px;
+  max-width: 200px;
+}
+.Message {
+  margin-bottom: 20px;
+  width: 100%;
+  position: relative;
+  animation: toast ease .5s;
+}
+.MessageBtnHide {
+  position: absolute;
+  top: 5px;
+  right: 4px;
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
+.Message.success {
+  background-color: rgb(28, 223, 25);
+}
+.Message.error {
+  background-color: rgb(223, 25, 48);
+}
+
+.MessageTitle {
+  font-weight: bold;
+  padding: 5px 10px;
+}
+
+.MessageContent {
+  font-size: 12px;
+  padding: 5px 10px;
+  border-top: 1px solid #000;
+}
+
+@keyframes toast {
   from {
-    transform: rotate(0deg);
+    transform: translateX(calc(100% + 50px));
   }
   to {
-    transform: rotate(360deg);
+    transform: translateX(0);
   }
 }
